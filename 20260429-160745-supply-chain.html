@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Supply Chain Scan: 20260429-160745-supply-chain</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css">
+  <style>
+/* Deep Review — canonical stylesheet
+ * Inlined into each generated HTML file by the beautify-review skill.
+ * Edit this file to change the look of all future reviews.
+ */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #1f2937;
+  background: #f8f9fb;
+  margin: 0;
+  padding: 2rem 1rem;
+}
+main { max-width: 900px; margin: 0 auto; }
+h1 { font-size: 1.6rem; margin-bottom: 0.5rem; color: #111827; }
+h2 { font-size: 1.35rem; margin-top: 2.5rem; margin-bottom: 1rem; color: #111827; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.4rem; }
+h3 { font-size: 1.1rem; margin-top: 1.5rem; margin-bottom: 0.8rem; }
+hr { border: none; border-top: 2px solid #e5e7eb; margin: 2rem 0; }
+a { color: #2563eb; text-decoration: none; }
+a:hover { text-decoration: underline; }
+code { font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace; font-size: 0.85em; background: #f3f4f6; padding: 0.15em 0.35em; border-radius: 4px; }
+
+/* Code blocks — override Prism defaults */
+pre { margin: 0 !important; border-radius: 0 0 8px 8px !important; }
+pre[class*="language-"] { font-size: 0.78rem; line-height: 1.3; }
+pre code { background: none; padding: 0; }
+
+/* Report metadata table */
+.meta-table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+.meta-table td { padding: 0.35rem 0.6rem; border: 1px solid #e5e7eb; vertical-align: top; }
+.meta-table td:first-child { font-weight: 600; width: 140px; background: #f9fafb; white-space: nowrap; }
+
+/* Cards — every section and finding lives in a card */
+.card { border-radius: 10px; padding: 1.2rem 1.4rem; margin-bottom: 1.2rem; }
+.card-neutral { background: #f1f3f5; border: 1px solid #d5d9e0; }
+.card-critical { background: #ffeef0; border: 1px solid #f5c6cb; }
+.card-important { background: #fff0e0; border: 1px solid #f5d9a8; }
+.card-suggestion { background: #f0f6ff; border: 1px solid #c7d9f5; }
+.card-design { background: #f0faf4; border: 1px solid #b7e4c7; }
+
+/* Severity section headings — colored to match their cards */
+.section-critical { color: #9b1c1c; }
+.section-important { color: #92400e; }
+.section-suggestion { color: #1e40af; }
+.section-design { color: #065f46; }
+
+/* Agent attribution pills */
+.pill { display: inline-block; font-size: 0.72rem; font-weight: 600; padding: 0.15em 0.55em; border-radius: 999px; margin-right: 0.3em; vertical-align: middle; letter-spacing: 0.01em; }
+.pill-claude { background: #e9d5ff; color: #6b21a8; }
+.pill-codex { background: #d1fae5; color: #065f46; }
+.pill-gemini { background: #ffe4e6; color: #9f1239; }
+
+/* Finding titles */
+.finding-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.6rem; line-height: 1.4; }
+.finding-num { font-weight: 800; }
+
+/* Code file header — dark bar above each source code block.
+ * The filename is a GitHub permalink to the displayed line range.
+ * Text color is light gray (#adbac7) for the bar, green (#7ee787)
+ * for the hyperlink — matching GitHub's dark-mode file header. */
+.code-file-header { background: #2d333b; color: #adbac7; font-family: "SF Mono", "Fira Code", Menlo, Consolas, monospace; font-size: 0.75rem; padding: 0.4rem 0.9rem; border-radius: 8px 8px 0 0; margin-top: 0.8rem; }
+.code-file-header a { color: #7ee787; }
+.code-file-header a:hover { text-decoration: underline; }
+
+/* Line numbers (CSS counters) and line highlighting */
+.code-line { display: block; }
+.code-line::before {
+  content: counter(line);
+  counter-increment: line;
+  display: inline-block;
+  width: 3em;
+  margin-right: 0.8em;
+  padding-right: 0.5em;
+  text-align: right;
+  color: #636e7b;
+  border-right: 1px solid #3d4556;
+  user-select: none;
+}
+.line-hl { background: rgba(255, 199, 0, 0.18); }
+
+/* Pilcrow anchor links — hidden until parent is hovered */
+.pilcrow { color: #d1d5db; text-decoration: none; font-weight: 400; margin-left: 0.4em; opacity: 0; transition: opacity 0.15s; }
+h2:hover .pilcrow, h3:hover .pilcrow, .finding-title:hover .pilcrow { opacity: 1; }
+.pilcrow:hover { color: #6b7280; text-decoration: none; }
+
+/* Fix label */
+.fix-label { font-weight: 700; }
+
+/* Agent retro summary table */
+.retro-table { width: 100%; border-collapse: collapse; margin-top: 0.8rem; font-size: 0.9rem; table-layout: fixed; }
+.retro-table th, .retro-table td { padding: 0.45rem 0.7rem; border: 1px solid #e5e7eb; text-align: left; }
+.retro-table th { background: #f3f4f6; font-weight: 600; }
+.retro-table tr:nth-child(even) { background: #f9fafb; }
+
+/* Supply-chain Summary table — first column gets breathing room,
+ * numeric middle columns center, header keeps its label on one line. */
+.summary-table { width: 100%; border-collapse: collapse; margin: 0.4rem 0 0.8rem; font-size: 0.92rem; }
+.summary-table th, .summary-table td {
+  padding: 0.4rem 0.7rem;
+  border: 1px solid #d5d9e0;
+  vertical-align: top;
+  text-align: left;
+}
+.summary-table th { background: rgba(255, 255, 255, 0.65); font-weight: 600; white-space: nowrap; }
+.summary-table td:first-child { min-width: 11rem; white-space: nowrap; }
+.summary-table th:not(:first-child):not(:last-child),
+.summary-table td:not(:first-child):not(:last-child) { text-align: center; }
+
+/* Lists and paragraphs inside cards */
+.card ul, .card ol { margin: 0.4rem 0; padding-left: 1.5rem; }
+.card li { margin-bottom: 0.3rem; }
+.card p { margin: 0.5rem 0; }
+.card p:first-child { margin-top: 0; }
+
+/* Supply-chain issue rows — used by issueList for bullets that
+ * uniformly start with a `file:line` reference. The location renders
+ * in a dark bar above the description so the eye picks up the path
+ * separately from the prose. */
+.issue-list { margin: 0.6rem 0; }
+.issue-row {
+  margin-bottom: 0.7rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.55);
+}
+.issue-loc {
+  background: #2d333b;
+  color: #adbac7;
+  padding: 0.3rem 0.7rem;
+  font-family: "SF Mono", "Fira Code", Menlo, Consolas, monospace;
+  font-size: 0.78rem;
+}
+.issue-loc a { color: #7ee787; text-decoration: none; }
+.issue-loc a:hover { text-decoration: underline; }
+.issue-loc code { background: none; padding: 0; color: inherit; font-size: 1em; }
+.issue-desc { padding: 0.55rem 0.8rem; }
+.issue-desc code { font-size: 0.85em; }
+
+/* Verdict highlight in metadata table */
+.verdict { font-weight: 700; }
+
+/* GitHub reference tooltips — shown on hover for #N links */
+.gh-tooltip {
+  position: absolute;
+  background: #1f2328;
+  color: #e6edf3;
+  padding: 0.55em 0.75em;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  line-height: 1.4;
+  max-width: 380px;
+  z-index: 100;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+.gh-tooltip-state {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 0.15em 0.5em;
+  border-radius: 999px;
+  margin-right: 0.4em;
+  vertical-align: baseline;
+  white-space: nowrap;
+}
+.gh-state-open { background: #238636; color: #fff; }
+.gh-state-closed { background: #848d97; color: #fff; }
+.gh-state-merged { background: #8957e5; color: #fff; }
+.gh-tooltip-title { vertical-align: baseline; }
+
+/* Mobile */
+@media (max-width: 640px) {
+  body { padding: 1rem 0.5rem; }
+  .card { padding: 0.9rem 1rem; }
+  pre code { font-size: 0.72rem; }
+}
+
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Supply Chain Scan: 20260429-160745-supply-chain</h1>
+
+    <table class="meta-table">
+      <tr><td>Date</td><td>2026-04-29 16:15</td></tr>
+      <tr><td>Repo</td><td><a href="https://github.com/rancher/dashboard">rancher/dashboard</a></td></tr>
+      <tr><td>Branch</td><td><code>master</code> @ <a href="https://github.com/rancher/dashboard/commit/e76fd9e642"><code>e76fd9e642</code></a></td></tr>
+      <tr><td>Kind</td><td>Supply chain scan</td></tr>
+      <tr><td>Verdict</td><td><span class="verdict">15 open issues, 6 advisory</span> &mdash; Node lockfiles and GitHub Actions are well-pinned; container base, ad-hoc downloads, and <code>git clone</code> build steps are not.</td></tr>
+    </table>
+
+    <hr>
+
+    <hr>
+    <h2 id="summary">Summary <a href="#summary" class="pilcrow">&#182;</a></h2>
+
+    <div class="card card-neutral">
+    <table class="summary-table">
+      <thead><tr><th>Ecosystem</th><th>Items</th><th>Pinned</th><th>Open issues</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><a href="#node-yarn-classic-all-six-lockfiles-checksum-verified">Node (yarn-classic)</a></td><td>19 <code>package.json</code> (1 root + 18 nested)</td><td>6 lockfiles, 6 405 / 6 407 installable descriptors checksum-verified</td><td>0 (2 missing-integrity entries are local <code>link:</code> deps — not external)</td><td>Dependabot ✓</td></tr>
+        <tr><td><a href="#github-actions-uses">GitHub Actions <code>uses:</code></a></td><td>461 references</td><td>443 SHA-pinned, 18 local/<code>docker://</code></td><td>0</td><td>Dependabot ✓</td></tr>
+        <tr><td>Workflow token permissions</td><td>140 <code>permissions:</code> declarations across 53 workflows</td><td>—</td><td>26 workflows missing top-level block, 52 sensitive-write scopes</td><td>—</td></tr>
+        <tr><td><a href="#container-images-unpinned-base">Container images</a></td><td>1 <code>Dockerfile</code> (1 <code>FROM</code>)</td><td>0 digest-pinned</td><td>1 unpinned base</td><td>—</td></tr>
+        <tr><td><a href="#inline-downloads-curl-wget-without-checksum">Inline downloads</a></td><td>7 candidates</td><td>4 verified (<code>wget</code> chrome via apt, <code>e2e-k3s-start</code> k3s + helm)</td><td>3 unverified</td><td>—</td></tr>
+        <tr><td><a href="#run-from-network">Run-from-network</a></td><td>2 commands</td><td>0</td><td>2</td><td>—</td></tr>
+        <tr><td><a href="#git-clone-in-build-install-scripts-cloned-code-is-later-executed"><code>git clone</code> in build/install scripts</a></td><td>5</td><td>0</td><td>5 (2 high-impact, 3 advisory)</td><td>—</td></tr>
+        <tr><td>Self-fetch from own moving ref</td><td>1 URL</td><td>0</td><td>1</td><td>—</td></tr>
+        <tr><td>Generic managers (Jenkins)</td><td>3 <code>Jenkinsfile</code>s</td><td>—</td><td>—</td><td>No pinning artifact applies (advisory)</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <hr>
+    <h2 id="pinned-dependencies" class="section-design">Pinned dependencies <a href="#pinned-dependencies" class="pilcrow">&#182;</a></h2>
+
+    <div class="card card-design">
+    <h3 id="node-yarn-classic-all-six-lockfiles-checksum-verified">Node (yarn-classic, all six lockfiles checksum-verified) <a href="#node-yarn-classic-all-six-lockfiles-checksum-verified" class="pilcrow">&#182;</a></h3>
+    <ul>
+      <li><code>yarn.lock</code> (root) — 1 981 / 1 983 installable descriptors; the 2 outliers are <code>eslint-plugin-local-rules@link:./eslint-plugin-local-rules</code> and <code>eslint-plugin-local-rules@link:eslint-plugin-local-rules</code>, both pointing at the in-tree <code>eslint-plugin-local-rules/</code> directory (yarn-classic does not compute integrity for <code>link:</code> deps because the bytes are local).</li>
+      <li><code>cypress/yarn.lock</code> — 811 / 811.</li>
+      <li><code>docusaurus/yarn.lock</code> — 1 215 / 1 215.</li>
+      <li><code>shell/yarn.lock</code> — 1 700 / 1 700.</li>
+      <li><code>storybook/yarn.lock</code> — 706 / 706.</li>
+      <li>13 nested <code>package.json</code> files (<code>creators/extension/**</code>, <code>pkg/**</code>, <code>scripts/standalone/</code>) are covered by the root lockfile.</li>
+      <li><code>.yarnrc</code> sets <code>--frozen-lockfile true</code> so an out-of-step lockfile fails the install.</li>
+    </ul>
+    </div>
+    <div class="card card-design">
+    <h3 id="github-actions-uses">GitHub Actions `uses:` <a href="#github-actions-uses" class="pilcrow">&#182;</a></h3>
+    <ul>
+      <li>443 / 461 references end in a 40-hex SHA (typically with a trailing <code># v1.2.3</code> comment for Renovate). The remaining 18 are local (<code>./.github/actions/...</code>) or <code>docker://...</code> (no upstream to pin). No floating <code>@v1</code>-style references found.</li>
+      <li>Dependabot is configured for <code>github-actions</code> weekly with a 7-day cooldown.</li>
+    </ul>
+    </div>
+    <div class="card card-design">
+    <h3 id="gh-aw-lock-yml-manifests">gh-aw lock.yml manifests <a href="#gh-aw-lock-yml-manifests" class="pilcrow">&#182;</a></h3>
+    <ul>
+      <li>The seven <code>.github/workflows/*.lock.yml</code> files are autogenerated by GitHub Agentic Workflows and embed a <code>gh-aw-manifest</code> header that pre-pins every action by SHA and every container image by <code>@sha256:</code>. The compiled body inside each file uses those pinned values.</li>
+    </ul>
+    </div>
+    <div class="card card-design">
+    <h3 id="bot-config">Bot config <a href="#bot-config" class="pilcrow">&#182;</a></h3>
+    <ul>
+      <li><code>.github/dependabot.yml</code> covers <code>github-actions</code> and <code>npm</code> (root + <code>shell/</code> + <code>creators/extension/**</code> + <code>docusaurus/</code> + <code>storybook/</code> + <code>pkg/*</code>).</li>
+      <li>Renovate not configured.</li>
+    </ul>
+    </div>
+    <hr>
+    <h2 id="open-issues" class="section-critical">Open issues <a href="#open-issues" class="pilcrow">&#182;</a></h2>
+
+    <div class="card card-critical">
+    <h3 id="top-tier-self-fetch-from-a-moving-ref">Top tier — self-fetch from a moving ref <a href="#top-tier-self-fetch-from-a-moving-ref" class="pilcrow">&#182;</a></h3>
+    <div class="issue-list">
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/get-branch-metadata.sh#L19"><code>scripts/get-branch-metadata.sh:19</code></a></div>
+        <div class="issue-desc"><code>curl -s -f -L https://raw.githubusercontent.com/rancher/dashboard/master/branches-metadata.json</code> pulls JSON from <code>master</code> of our own repo and feeds it into <code>jq</code> to drive subsequent fetch URLs in <code>scripts/build-e2e</code>. Anyone with push access to <code>master</code> (or any cross-branch attack on the raw mirror) controls the bytes. Pin the URL to a 40-hex SHA, vendor the file, or use a relative path / <code>git show $(git merge-base origin/master HEAD):branches-metadata.json</code>. (see wiki §3.5)</div>
+      </div>
+    </div>
+    </div>
+    <div class="card card-critical">
+    <h3 id="container-images-unpinned-base">Container images (unpinned base) <a href="#container-images-unpinned-base" class="pilcrow">&#182;</a></h3>
+    <div class="issue-list">
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/shell/scripts/extension/helm/package/Dockerfile#L1"><code>shell/scripts/extension/helm/package/Dockerfile:1</code></a></div>
+        <div class="issue-desc"><code>FROM registry.suse.com/bci/bci-base:15.5</code> has no <code>@sha256:</code> digest. Add a digest: <code>FROM registry.suse.com/bci/bci-base:15.5@sha256:&lt;hex&gt;</code>. The trailing tag lets Renovate update; the digest is what&#39;s verified at pull. (see wiki §3.4)</div>
+      </div>
+    </div>
+    </div>
+    <div class="card card-critical">
+    <h3 id="inline-downloads-curl-wget-without-checksum">Inline downloads (curl/wget without checksum) <a href="#inline-downloads-curl-wget-without-checksum" class="pilcrow">&#182;</a></h3>
+    <div class="issue-list">
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/build-e2e#L40"><code>scripts/build-e2e:40</code></a></div>
+        <div class="issue-desc"><code>curl https://releases.rancher.com/dashboard/latest/index.html -k -o $OUTPUT_DIR/index.html</code> is fetched into the e2e build artifact and served by the test harness. No checksum, no TLS verification (<code>-k</code>), and <code>latest/</code> is a moving ref. Either (a) build the dashboard from source unconditionally, (b) drop <code>-k</code> and pin to a versioned URL with a stored sha256, or (c) document the artifact as untrusted-by-design and confirm the e2e suite never executes it. (see wiki §3.5)</div>
+      </div>
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/build-e2e#L62"><code>scripts/build-e2e:62</code></a></div>
+        <div class="issue-desc"><code>curl $EMBER_URL -k -o $OUTPUT_EMBER_DIR/index.html</code> — same pattern as above; <code>$EMBER_URL</code> defaults to <code>https://releases.rancher.com/ui/latest2/index.html</code> and is overridden via the JSON pulled by <code>scripts/get-branch-metadata.sh</code> (which is itself unpinned, see top tier). Apply the same fix.</div>
+      </div>
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/shell/scripts/extension/publish#L400"><code>shell/scripts/extension/publish:400</code></a></div>
+        <div class="issue-desc"><code>wget -P ${BASE_DIR} https://raw.githubusercontent.com/${GITHUB_SOURCE}/${GITHUB_BRANCH}/index.yaml</code> pulls a Helm chart index from a branch (default <code>main</code>) and merges it into the locally-rebuilt index. The merged index is then published to <code>gh-pages</code>. A tampered <code>index.yaml</code> could redirect chart consumers to an attacker URL. Pin to a SHA or run <code>helm repo index --merge</code> against the bytes after a digest check. (see wiki §3.5)</div>
+      </div>
+    </div>
+    </div>
+    <div class="card card-critical">
+    <h3 id="run-from-network">Run-from-network <a href="#run-from-network" class="pilcrow">&#182;</a></h3>
+    <div class="issue-list">
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/e2e-k3s-start#L81"><code>scripts/e2e-k3s-start:81</code></a></div>
+        <div class="issue-desc"><code>kubectl apply -f https://github.com/jetstack/cert-manager/releases/download/v1.7.1/cert-manager.crds.yaml</code> is version-pinned but not digest-verified. The script verifies <code>K3S_CHECKSUM</code> and <code>HELM_CHECKSUM</code> for the two adjacent downloads (lines 53–58, 69–75) — adopt the same pattern: <code>curl -sfL -o crds.yaml https://github.com/.../v1.7.1/cert-manager.crds.yaml &amp;&amp; echo &quot;&lt;sha256&gt; crds.yaml&quot; | sha256sum -c &amp;&amp; kubectl apply -f crds.yaml</code>. (see wiki §3.5)</div>
+      </div>
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/cypress/scripts/build.sh#L60"><code>cypress/scripts/build.sh:60</code></a></div>
+        <div class="issue-desc"><code>npx tsc --project tsconfig.build.json</code> runs without a pinned version. In practice <code>tsc</code> resolves to the local <code>node_modules/.bin/tsc</code> (yarn-installed, integrity-checked) so the registry fallback is unlikely; advisory only. Replace with <code>yarn run tsc</code> or <code>node_modules/.bin/tsc</code> to remove the registry path entirely. (see wiki §3.6)</div>
+      </div>
+    </div>
+    </div>
+    <div class="card card-critical">
+    <h3 id="git-clone-in-build-install-scripts-cloned-code-is-later-executed">`git clone` in build/install scripts (cloned code is later executed) <a href="#git-clone-in-build-install-scripts-cloned-code-is-later-executed" class="pilcrow">&#182;</a></h3>
+    <div class="issue-list">
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/cypress/jenkins/init.sh#L36"><code>cypress/jenkins/init.sh:36</code></a></div>
+        <div class="issue-desc"><code>git clone -b &quot;${QA_INFRA_BRANCH}&quot; &quot;${QA_INFRA_REPO}&quot; &quot;${QA_INFRA_DIR}&quot;</code> defaults to <code>https://github.com/rancher/qa-infra-automation.git</code> at branch <code>main</code>. The clone is then used to (a) <code>docker build</code> a runner image from <code>Dockerfile.quickstart</code> (line 44) and (b) execute the ansible playbook inside it (line 222). Cloned bytes are executed. Pin <code>QA_INFRA_BRANCH</code> to a 40-hex SHA in the Jenkins job config and add a post-clone <code>git checkout &lt;sha&gt;</code> guard. (see wiki §3.5)</div>
+      </div>
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/shell/scripts/test-plugins-build.sh#L201"><code>shell/scripts/test-plugins-build.sh:201</code></a></div>
+        <div class="issue-desc"><code>git clone https://github.com/$REPO_ORG/$REPO_NAME.git</code> clones five upstream extension repos (kubewarden, neuvector, harvester, ali, virtual-clusters), runs <code>yarn install --frozen-lockfile</code> + <code>yarn build-pkg</code> against each, and the build executes their build scripts. A compromise of any of those repos&#39; default branches lands arbitrary code in our CI. Pin each clone to a SHA via <code>--branch &lt;sha&gt;</code> (use a small JSON manifest at the top of the script so Renovate can update it). (see wiki §3.5)</div>
+      </div>
+    </div>
+    </div>
+    <div class="card card-critical">
+    <h3 id="git-clone-in-build-install-scripts-advisory-cloned-code-not-executed">`git clone` in build/install scripts (advisory — cloned code not executed) <a href="#git-clone-in-build-install-scripts-advisory-cloned-code-not-executed" class="pilcrow">&#182;</a></h3>
+    <div class="issue-list">
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/scripts/check-creators-workflows-code.sh#L89"><code>.github/workflows/scripts/check-creators-workflows-code.sh:89</code></a></div>
+        <div class="issue-desc"><code>git clone -b &quot;$WORKFLOW_BRANCH&quot; &quot;$DASHBOARD_REPO&quot;</code>. The clone is used for a <code>diff</code> against expected workflow YAML. The cloned files are not executed, but a tampered branch could mask a real workflow drift. Pin <code>$WORKFLOW_BRANCH</code> to a SHA when invoking from a workflow, or use the in-checkout copy.</div>
+      </div>
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/scripts/publish-storybook#L25"><code>.github/workflows/scripts/publish-storybook:25</code></a></div>
+        <div class="issue-desc"><code>git clone git@github.com:rancher/storybook.git</code>. The clone is the destination of a <code>git push</code>, never executed. Advisory.</div>
+      </div>
+      <div class="issue-row">
+        <div class="issue-loc"><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/scripts/retrieve-versions.sh#L31"><code>.github/workflows/scripts/retrieve-versions.sh:31</code></a></div>
+        <div class="issue-desc"><code>git clone https://github.com/rancher/$REPO_NAME.git</code> then reads <code>package.json</code> to set workflow outputs. Cloned bytes are not executed but the read package versions feed downstream tag computation. Advisory.</div>
+      </div>
+    </div>
+    </div>
+    <div class="card card-critical">
+    <h3 id="github-actions-token-permissions-missing-top-level-block-default-read-write">GitHub Actions token permissions — missing top-level block (default = read/write) <a href="#github-actions-token-permissions-missing-top-level-block-default-read-write" class="pilcrow">&#182;</a></h3>
+    <ul>
+      <li>26 workflows lack a top-level <code>permissions:</code> declaration, so each job runs with the repo-default token (commonly <code>read/write</code> on legacy repos). With <code>actions/</code>, <code>id-token</code>, and <code>packages</code> write available by default, a compromised pinned action can publish artifacts, mint OIDC tokens, or push code. Add <code>permissions: read-all</code> at the workflow level and grant the narrowest <code>write</code> per-job that needs it.</li>
+      <li>Workflows: <code>add-issue-labels.yaml</code>, <code>automation-candidate.yaml</code>, <code>build-and-upload-branch.yaml</code>, <code>build-and-upload-release.yaml</code>, <code>build-and-upload.yaml</code>, <code>build-extension-catalog.yml</code>, <code>build-extension-charts.yml</code>, <code>build-extensions-test.yml</code>, <code>build-test.yaml</code>, <code>check-plugins.yaml</code>, <code>code-coverage.yaml</code>, <code>create-pr-build-extension-charts.yml</code>, <code>docusaurus.yaml</code>, <code>extensions-compatibility-tests.yaml</code>, <code>port-issue.yaml</code>, <code>port-pr.yaml</code>, <code>pr-gh-project-processor.yaml</code>, <code>pr-gh-project.yaml</code>, <code>rancher-components.yaml</code>, <code>storybook.yaml</code>, <code>test-extension-workflows-master.yml</code>, <code>test-extension-workflows-release-2.8.yml</code>, <code>test-extension-workflows-release-2.9.yml</code>, <code>test.yaml</code>, <code>update-cloud-data.yml</code>, <code>valid-pr.yaml</code>.</li>
+    </ul>
+    </div>
+    <div class="card card-critical">
+    <h3 id="github-actions-token-permissions-sensitive-write-scopes">GitHub Actions token permissions — sensitive-write scopes <a href="#github-actions-token-permissions-sensitive-write-scopes" class="pilcrow">&#182;</a></h3>
+    <p>The 52 sensitive-write findings split into two categories:</p>
+    <p><strong>Privileged automation that legitimately needs the scope.</strong> The seven <code>*.lock.yml</code> files (<code>agentics-maintenance.yml</code>, <code>daily-test-improver.lock.yml</code>, <code>pr-fix.lock.yml</code>, etc.) are autogenerated by gh-aw and need <code>contents: write</code> to push branches/commits, <code>actions: write</code> to manage agentic state, and <code>id-token: write</code> for OIDC artifact attestation. The lock-file headers pre-pin every action and image by SHA, so the privileged token only ever runs vetted code. No action.</p>
+    <p><strong>Hand-written workflows where the scope can likely be narrowed.</strong> Surface these for review:</p>
+    <ul>
+      <li><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/auto-retry.yaml#L17"><code>.github/workflows/auto-retry.yaml:17</code></a> (workflow) — <code>actions: write</code>. Only re-runs failed jobs; verify <code>actions: write</code> is the minimum (the <code>gh run rerun</code> API path).</li>
+      <li><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/automation-candidate.yaml#L17"><code>.github/workflows/automation-candidate.yaml:17</code></a> (job) — <code>id-token: write</code> for an issue-labelling workflow looks unnecessary; remove unless an OIDC consumer is downstream.</li>
+      <li><code>.github/workflows/build-extension-catalog.yml:37,39</code> (job) — <code>actions: write</code> + <code>packages: write</code>; the latter is needed to publish the catalog image, the former should be reviewed.</li>
+      <li><code>.github/workflows/build-extension-charts.yml:42,120-123</code> and <code>.github/workflows/test-extension-workflows-*.yml</code> — <code>actions/contents/deployments/pages: write</code> cluster; the gh-pages publish needs <code>contents/pages</code> but the <code>actions/deployments</code> writes look incidental.</li>
+      <li><code>.github/workflows/create-pr-build-extension-charts.yml:30,96</code> — <code>actions: write</code>, <code>contents: write</code>. The PR-creating workflow needs <code>contents</code> (commit) and <code>pull-requests: write</code> (already present), but <code>actions: write</code> is unusual.</li>
+      <li><code>.github/workflows/docusaurus.yaml:49,50</code> — <code>pages: write</code>, <code>id-token: write</code>. Standard GitHub Pages deploy pair; keep.</li>
+      <li><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/fossa.yaml#L14"><code>.github/workflows/fossa.yaml:14</code></a> (workflow) — <code>id-token: write</code> so FOSSA can attest builds; keep if attestation is consumed.</li>
+      <li><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/port-issue.yaml#L15"><code>.github/workflows/port-issue.yaml:15</code></a> and <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/port-pr.yaml#L12-L14"><code>port-pr.yaml:12-14</code></a> — <code>id-token: write</code>, <code>contents: write</code>, <code>actions: write</code>; backport bots need <code>contents</code>/<code>pull-requests</code>, but <code>id-token</code>/<code>actions</code> look incidental.</li>
+      <li><code>.github/workflows/release-{cypress-pkg,rancher-components,shell-pkg}.yaml</code> — <code>id-token: write</code> for npm provenance; keep.</li>
+      <li><code>.github/workflows/update-cloud-data.yml:13,14,16</code> — <code>actions: write</code>, <code>contents: write</code>, <code>id-token: write</code>. The <code>id-token: write</code> is unusual for a pure data-update workflow; remove unless explicitly attesting.</li>
+    </ul>
+    </div>
+    <div class="card card-critical">
+    <h3 id="insecure-transport-advisory">Insecure transport (advisory) <a href="#insecure-transport-advisory" class="pilcrow">&#182;</a></h3>
+    <ul>
+      <li><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/build-e2e#L40"><code>scripts/build-e2e:40</code></a> and <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/build-e2e#L62"><code>scripts/build-e2e:62</code></a> — <code>curl ... -k</code> over the public Internet to <code>releases.rancher.com</code>. Without TLS auth and without a stored digest, the bytes have no authentication. Drop <code>-k</code> and verify a sha256 (see Inline downloads above).</li>
+      <li><a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/backend#L111"><code>scripts/backend:111</code></a>, <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/e2e-docker-start#L88"><code>scripts/e2e-docker-start:88</code></a>, <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/e2e-k3s-start#L137"><code>scripts/e2e-k3s-start:137</code></a>, <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/e2e-k3s-start#L175"><code>scripts/e2e-k3s-start:175</code></a> — <code>curl --insecure</code> against <code>localhost</code> test endpoints with self-signed certs. Acceptable in test setup; flagged for completeness.</li>
+    </ul>
+    </div>
+    <div class="card card-critical">
+    <h3 id="yarn-corepack-advisory">Yarn corepack (advisory) <a href="#yarn-corepack-advisory" class="pilcrow">&#182;</a></h3>
+    <ul>
+      <li><code>creators/extension/package.json</code> declares <code>packageManager: yarn@4.5.0</code> without a <code>+sha1.&lt;hex&gt;</code> checksum, so corepack will trust whatever it downloads when bootstrapping the package manager. Replace with <code>yarn@4.5.0+sha1.&lt;hex&gt;</code> (corepack prints the hash on first install).</li>
+    </ul>
+    </div>
+    <hr>
+    <h2 id="retro-dependency-types-not-explicitly-covered">Retro: dependency types not explicitly covered <a href="#retro-dependency-types-not-explicitly-covered" class="pilcrow">&#182;</a></h2>
+
+    <div class="card card-neutral">
+    <h3 id="r1-kubectl-apply-f-pinned-version-url-falsely-classified-as-verified">R1 — `kubectl apply -f &lt;pinned-version-URL&gt;` falsely classified as verified <a href="#r1-kubectl-apply-f-pinned-version-url-falsely-classified-as-verified" class="pilcrow">&#182;</a></h3>
+    <p><strong>Where</strong>: <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/scripts/e2e-k3s-start#L81"><code>scripts/e2e-k3s-start:81</code></a>.</p>
+    <p><strong>Why missed</strong>: <code>inventory.py</code>&#39;s <code>run_from_network[]</code> detector recognises <code>kubectl apply -f URL</code> and runs the ±30-line verifier scan. The window picked up <code>K3S_CHECKSUM</code> / <code>HELM_CHECKSUM</code> blocks for the two unrelated downloads on lines 53–58 and 69–75 and stamped this entry <code>verifier ✓</code>. The verifier targets <code>k3s-script</code> and <code>get_helm.sh</code>, not <code>cert-manager.crds.yaml</code>.</p>
+    <p><strong>Proposed change</strong>: For <code>run_from_network[]</code> <code>kubectl apply -f URL</code> entries, require the verifier line to name the URL&#39;s filename basename (<code>cert-manager.crds.yaml</code>) or to live in the <code>±10</code> line window. The same destination-name match already exists for <code>curl</code>/<code>wget</code> candidates per the Phase 2 rules — extend it to <code>kubectl apply -f</code> and to <code>helm install</code> from a remote chart.</p>
+    </div>
+    <div class="card card-neutral">
+    <h3 id="r2-gh-aw-agentic-workflow-lock-yml-manifests-as-a-first-class-pinning-signal">R2 — `gh-aw` agentic-workflow lock.yml manifests as a first-class pinning signal <a href="#r2-gh-aw-agentic-workflow-lock-yml-manifests-as-a-first-class-pinning-signal" class="pilcrow">&#182;</a></h3>
+    <p><strong>Where</strong>: <code>.github/workflows/*.lock.yml</code> (7 files, e.g. <code>daily-accessibility-review.lock.yml</code>).</p>
+    <p><strong>Why missed</strong>: The script&#39;s existing GHA + container-image scanners parse the compiled body and report what they find, which means each lock.yml looks like an unpinned-permissions soup of sensitive-writes. But the file&#39;s <code>gh-aw-manifest</code> header (line 2) embeds a structured manifest that pre-pins every <code>actions[].sha</code> and <code>containers[].digest</code> and lists every secret the workflow can touch. Treating the manifest as authoritative would:</p>
+    <ul>
+      <li>Confirm the body&#39;s pinning posture without re-parsing every <code>uses:</code> and <code>image:</code> line in a 1500-line generated file.</li>
+      <li>Distinguish &quot;compiled from .md spec, audit the manifest&quot; from &quot;hand-written workflow, audit each line.&quot;</li>
+    </ul>
+    <p><strong>Proposed change</strong>: Add a <code>gh_aw_lock_files[]</code> section to the inventory. For each <code>.lock.yml</code> whose first comment line matches <code># gh-aw-metadata:</code>, parse the second comment line (<code># gh-aw-manifest:</code>) as JSON and emit <code>compiler_version</code>, <code>actions[]</code>, <code>containers[]</code>, <code>secrets[]</code>. In Phase 2 and Phase 3, suppress the per-line <code>uses:</code> / <code>image:</code> and <code>permissions:</code> findings for these files when <code>actions[].sha</code> matches every <code>uses:</code> SHA in the body — surface a single <code>Pinned dependencies › gh-aw lock files</code> row instead. Hand-written privileged scopes still warrant per-finding bullets so they&#39;re visible in the report.</p>
+    </div>
+    <div class="card card-neutral">
+    <h3 id="r3-git-clone-followed-by-docker-build-yarn-build-pkg-should-rate-higher-than-git-clone-followed-by-diff">R3 — `git clone` followed by `docker build` / `yarn build-pkg` should rate higher than `git clone` followed by `diff` <a href="#r3-git-clone-followed-by-docker-build-yarn-build-pkg-should-rate-higher-than-git-clone-followed-by-diff" class="pilcrow">&#182;</a></h3>
+    <p><strong>Where</strong>: <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/cypress/jenkins/init.sh#L36-L46"><code>cypress/jenkins/init.sh:36-46</code></a>, <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/shell/scripts/test-plugins-build.sh#L201-L220"><code>shell/scripts/test-plugins-build.sh:201-220</code></a>, <a href="https://github.com/rancher/dashboard/blob/e76fd9e642c10668f78a5911d3c939908230ff75/.github/workflows/scripts/check-creators-workflows-code.sh#L89"><code>.github/workflows/scripts/check-creators-workflows-code.sh:89</code></a> (compare).</p>
+    <p><strong>Why missed</strong>: The script&#39;s <code>git_clones_in_scripts[]</code> flags every non-SHA clone uniformly. There&#39;s no notion of &quot;what does the script do with the clone.&quot; A clone that feeds <code>docker build</code> or <code>yarn build-pkg</code> is in the same threat tier as <code>curl | bash</code>; a clone that feeds <code>diff</code> is advisory.</p>
+    <p><strong>Proposed change</strong>: After detecting a <code>git clone</code>, scan the next ~50 lines (or the rest of the function body) for <code>docker build</code>, <code>yarn build</code>, <code>yarn install</code>, <code>npm install</code>, <code>make</code>, <code>cargo build</code>, <code>go build</code>, <code>ansible-playbook</code>, <code>python setup.py install</code>, <code>pip install -e .</code>. When any match: tag the entry <code>executes_cloned_code: true</code> and surface in the top tier. When the only consumers are <code>diff</code>, <code>cmp</code>, <code>sha256sum</code>, <code>cat</code>, file reads from <code>jq</code>/<code>yq</code>, or <code>git push</code>: tag <code>executes_cloned_code: false</code> and surface as advisory. Today&#39;s report has to do this classification by hand.</p>
+    </div>
+    <div class="card card-neutral">
+    <h3 id="r4-yarnrc-yarn-classic-frozen-lockfile-true-not-surfaced-in-the-digest">R4 — `.yarnrc` (yarn-classic) `--frozen-lockfile true` not surfaced in the digest <a href="#r4-yarnrc-yarn-classic-frozen-lockfile-true-not-surfaced-in-the-digest" class="pilcrow">&#182;</a></h3>
+    <p><strong>Where</strong>: <code>/Users/jan/git/dashboard/.yarnrc</code> (single line: <code>--frozen-lockfile true</code>).</p>
+    <p><strong>Why missed</strong>: The Node section inspects <code>.yarnrc.yml</code> (yarn-berry) but not the legacy <code>.yarnrc</code> (yarn-classic). When the classic config sets <code>--frozen-lockfile true</code>, every install fails on lockfile drift — this is a positive signal worth recording.</p>
+    <p><strong>Proposed change</strong>: Extend the <code>.yarnrc.yml</code> parser to also read <code>.yarnrc</code> (key/value, one per line, leading <code>--</code> allowed) and surface <code>frozen_lockfile: bool</code> plus <code>registry: &lt;url&gt;</code> in the same <code>package_descriptors[].yarnrc</code> block. Annotate the Node summary row with <code>frozen-lockfile ✓</code> when set.</p>
+    </div>
+  </main>
+  <script>window.Prism = window.Prism || {}; Prism.manual = true;</script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-go.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-diff.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-typescript.min.js"></script>
+  <script>
+/* Deep Review — Prism initialization and line-number wrapping.
+ * Inlined into each generated HTML file by the beautify-review skill.
+ * Runs synchronously at the end of <body> — no event listeners.
+ *
+ * Prerequisite: a preceding <script> must set Prism.manual = true
+ * before the Prism core <script> loads.
+ */
+
+Prism.highlightAll();
+
+document.querySelectorAll('pre[data-start]').forEach(function(pre) {
+  var startLine = parseInt(pre.getAttribute('data-start'), 10) || 1;
+  var hlAttr = pre.getAttribute('data-line') || '';
+
+  /* Parse data-line into a Set of line numbers to highlight.
+   * Accepts comma-separated values: "75,76,77" or ranges: "75-84". */
+  var hlLines = new Set();
+  hlAttr.split(',').forEach(function(part) {
+    part = part.trim();
+    if (!part) return;
+    var m = part.match(/^(\d+)-(\d+)$/);
+    if (m) {
+      for (var i = parseInt(m[1], 10); i <= parseInt(m[2], 10); i++) hlLines.add(i);
+    } else {
+      hlLines.add(parseInt(part, 10));
+    }
+  });
+
+  var code = pre.querySelector('code');
+  if (!code) return;
+
+  var html = code.innerHTML;
+  var lines = html.split('\n');
+  /* Strip a trailing empty line that Prism sometimes leaves. */
+  if (lines.length > 0 && lines[lines.length - 1].trim() === '') lines.pop();
+
+  var wrapped = lines.map(function(line, idx) {
+    var lineNum = startLine + idx;
+    var cls = 'code-line' + (hlLines.has(lineNum) ? ' line-hl' : '');
+    return '<span class="' + cls + '">' + line + '</span>';
+  });
+
+  /* Join with '' (empty string) — NOT '\n'.
+   * Inside <pre>, newlines are literal whitespace. Since .code-line uses
+   * display: block, joining with '\n' produces double line spacing. */
+  code.innerHTML = wrapped.join('');
+  pre.style.counterReset = 'line ' + (startLine - 1);
+});
+
+/* GitHub reference tooltips — show title and state on hover for #N links.
+ * Links must have class="gh-ref" and data-title set by the generator. */
+document.querySelectorAll('a.gh-ref[data-title]').forEach(function(link) {
+  var tip = null;
+
+  link.addEventListener('mouseenter', function() {
+    if (tip) return;
+    tip = document.createElement('div');
+    tip.className = 'gh-tooltip';
+
+    var state = link.getAttribute('data-state') || '';
+    var type = link.getAttribute('data-type') || 'issue';
+    var label = state.charAt(0).toUpperCase() + state.slice(1).toLowerCase();
+
+    var pill = document.createElement('span');
+    pill.className = 'gh-tooltip-state gh-state-' + state;
+    pill.textContent = label + (type === 'pr' ? ' PR' : '');
+
+    var title = document.createElement('span');
+    title.className = 'gh-tooltip-title';
+    title.textContent = link.getAttribute('data-title');
+
+    tip.appendChild(pill);
+    tip.appendChild(title);
+    document.body.appendChild(tip);
+
+    var rect = link.getBoundingClientRect();
+    var tw = tip.offsetWidth;
+    var th = tip.offsetHeight;
+    var left = rect.left + window.scrollX;
+    var top = rect.top + window.scrollY - th - 8;
+
+    if (left + tw > window.innerWidth - 12) left = window.innerWidth - tw - 12;
+    if (left < 4) left = 4;
+    if (top < window.scrollY + 4) top = rect.bottom + window.scrollY + 8;
+
+    tip.style.left = left + 'px';
+    tip.style.top = top + 'px';
+    tip.style.opacity = '1';
+  });
+
+  link.addEventListener('mouseleave', function() {
+    if (tip) { tip.remove(); tip = null; }
+  });
+});
+
+  </script>
+</body>
+</html>
